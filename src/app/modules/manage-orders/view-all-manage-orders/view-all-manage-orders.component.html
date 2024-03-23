@@ -1,0 +1,44 @@
+<div class="position-relative f_13 w-100 orderTable">
+  <!-- <pre>
+    {{allOrders|json}}
+  </pre> -->
+    <div class="table-responsive">
+    <table class="table mt-2 border table-responsive table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" class="bg-light">S.No</th>
+          <th scope="col" class="bg-light">Order Id</th>
+          <th scope="col" class="bg-light">Product Name</th>
+          <th scope="col" class="bg-light">city/village</th>
+          <th scope="col" class="bg-light">Date & Time</th>
+          <th scope="col" class="bg-light">zip</th>
+          <th scope="col" class="bg-light">country</th>
+          <th scope="col" class="bg-light">status</th>
+          <th scope="col" class="bg-light">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allOrders;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{item._id}}</td>
+          <td routerLink="../new-in/single-view/{{item.orderItems[0].product._id}}" class="text-primary cp">{{item.orderItems[0].product.name}}</td>
+          <td>{{item.city}}</td>
+          <td>{{item.dateOrdered | slice:0:10}} [{{item.dateOrdered | slice:11:16}}]</td>
+          <td>{{item.zip}}</td>
+          <td>{{item.country}}</td>
+          <td><span ngClass="{{item.status}}" [ngClass]="item.status=='out of delivery' ? 'out-of-delivery' : item.status">{{item.status}}</span></td>
+          <!--<td>{{item.quantity}}</td>
+          <td>{{item.type}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.oldPrice}}</td> -->
+          <td>
+            <span class="cp m-1 bg-info text-white p-1 f_13" routerLink="view/{{item._id}}">View</span>
+            <!-- <span class="cp m-1 bg-success p-1 text-white f_14" routerLink="edit/{{item._id}}">Edit</span> -->
+            <!-- <span class="cp m-1 bg-danger text-white p-1 f_14" (click)="removeProduct(item._id)">Remove</span> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="position-absolute top-0 start-0 h-100 w-100 bg-white text-center fs-2 d-flex align-items-center justify-content-center" style="margin-top: 3px;" *ngIf="isLoader">Loading...</div>
+    

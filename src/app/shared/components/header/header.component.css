@@ -1,0 +1,16 @@
+.menu-item{
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  .active{color: red;border:1px solid black!important;}
+  .searchBox{
+   position: relative;
+  }
+  .searchBox ul{
+    position: absolute;
+  background: wheat;
+  width: 96%;
+  border-radius: 3px;
+  list-style: none;
+  padding: 5px 11px;
+  }

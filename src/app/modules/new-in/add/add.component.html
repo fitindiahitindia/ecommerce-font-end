@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="row p-0">
+    <div class="col-md-12 p-0  mt-2">
+    <div class="card">
+      <div class="card-header fs-5 fw-medium">
+        Create Product
+      </div>
+      <div class="card-body py-1">
+        <form action="" class="">
+          <div class="row py-2  border bg-light">
+            <div class="col-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control form-control-sm bg-white" name="name" [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.name">
+            </div>
+            <div class="col-6">
+              <label class="form-label">Quantity/Weight/Size</label>
+              <input type="text" class="form-control form-control-sm bg-white" name="quality"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.quantity">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Description</label>
+              <textarea type="text" class="form-control form-control-sm bg-white" name="description"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.description"></textarea>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Category Type</label>
+              <select name="" id="" class="form-select form-select-sm form-control-sm text-capitalize" #val (change)="getCategoryHtm(val)">
+                <option value="" selected disabled>Select category type</option>
+                <option value="{{cat.categoryName}}" *ngFor="let cat of category;"><span class="text-capitalize">{{cat.categoryName}}</span></option>
+              </select>
+              <!-- <select name="" id="" class="form-select form-control-sm text-capitalize" [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.type">
+                <option value="almond">almond</option>
+                <option value="cashew">cashew</option>
+                <option value="raisin">raisin</option>
+                <option value="pistachio">pistachio</option>
+              </select> -->
+            </div>
+            <div class="col-6">
+              <label class="form-label">Image URL</label>
+              <input type="text" class="form-control form-control-sm bg-white" name="image" [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.image">
+            </div>
+    
+            <div class="col-6">
+              <label class="form-label">Price</label>
+              <input type="number" min="0" class="form-control form-control-sm bg-white"  name="price" [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.price">
+            </div>
+            <div class="col-6">
+              <label class="form-label">oldprice</label>
+              <input type="number" min="0" class="form-control form-control-sm bg-white" name="oldPrice"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]="createPro.oldPrice">
+            </div>
+            <div class="col-12 text-danger my-1" *ngIf="isError">
+              ❌{{isError}}
+            </div>
+            <div style="margin-top: 8px;">
+              <button mat-flat-button color="primary" style="margin-right: 5px;" (click)="createProduct()">Save</button>
+              <button mat-flat-button color="accent" type="button" routerLink="../">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div style="background-color: greenyellow;padding:7px;font-size: 18px;margin-bottom: 5px;font-weight: bold;">
+      <span>View Product</span></div> -->
+    </div>
+  </div>
+
+</div>
+
+
+<div class="successLoader d-flex align-items-end justify-content-center">
+  <div class="position-fixed z-2 bg-warning text-dark border border-dark px-3 p-1"
+    [ngStyle]="isCreatePro ? {'top':'30px','transition':'1s'} :{'top':'-50px','transition':'2s'}">
+    <span class="text-success fw-bold">Product Create</span> Successfully
+  </div>
+</div>

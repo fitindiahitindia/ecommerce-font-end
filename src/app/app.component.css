@@ -1,0 +1,49 @@
+.c_container{
+    min-width: 90%;
+    margin:0 5%;
+    position: relative;
+}
+@media (max-width:568px){
+    .c_container{
+        min-width: 90%;
+        margin:0 5%;
+    }
+}
+.backgroundDesign{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: rebeccapurple;
+    left: 0%;
+    bottom: 0%;
+    border-radius: 50%;
+    z-index: -1;
+}
+.example-full-width{
+    width: 100%;
+}
+.nav-link{
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    list-style: none;
+    padding:0;
+}
+.nav-link li{
+    margin-right:8px;
+}
+  mat-drawer {
+    width: 250px;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+    width: 86%;
+    margin-left: 7%;
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  li{transition: 0.2s;}
+  

@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Barlow', sans-serif!important; }
+.tc{text-align: center;}
+.headings{font-size: 25px;}
+.lightgreen{background-color: #60bb0421;}
+.darkgreen{background-color: rgb(3, 51, 3)}
+.cp{cursor: pointer;}
+.darkgreentext{color: rgb(3, 51, 3);}
+.lightgreentext{color: #65801a;}
+.darkyellow{color: #ffa700;}
+.olive{color: rgb(189, 160, 5);}
+.olivebg{background-color: rgb(189, 160, 5);}
+.f_11{font-size: 11px;}
+.f_12{font-size: 12px;}
+.f_13{font-size: 13px;}
+.f_14{font-size: 14px;}
+.f_15{font-size: 15px;}
+.f_16{font-size: 15px;}
+.pending{
+  background-color: #ffefca!important;
+  color: #bc3803!important;
+  border-color: #ffcc85!important;
+  
+}
+.out-of-delivery{
+  background-color: #f7d0fb!important;
+  color: #58096c!important;
+  border-color: #dfb4e8!important;
+}
+.packaging{
+  background-color: #d0f1fb!important;
+  color: #09586c!important;
+  border-color: #b4e8e4!important;
+}
+.delivered{
+  background-color: #d9fbd0!important;
+  color: #1c6c09!important;
+  border-color: #bee8b4!important;
+}
+.cancelled{
+  background-color: #ffe0db!important;
+  color: #b81800!important;
+  border-color: #fabcb3!important;
+}
+@media (max-width:575px){
+    .w100_575{width: 100%;}
+    .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+        padding: 0 6px!important;
+      }
+      .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+        line-height: 34px;
+      }
+}
+
+hr.dashboardTitle{
+  margin:9px 0!important
+}

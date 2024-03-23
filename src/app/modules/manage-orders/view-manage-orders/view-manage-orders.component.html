@@ -1,0 +1,173 @@
+<div class="container-fluid border mt-2">
+  <!-- <pre>
+    {{orderDetails|json}}
+  </pre> -->
+  <div class="row">
+    <div class="col-md-6">
+      <h5 class="fw-medium mt-1 mb-1">Order: #{{orderDetails[0].orderId.id}}</h5>
+      <h6 class="mb-0">Customer Id: #3251</h6>
+    </div>
+    <div class="col-md-6 align-items-end mt-2 mt-mb-0 d-md-flex justify-content-end">
+      <div class="">
+        <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-printer"></i> Print</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2 g-2">
+    <div class="col-md-8">
+      <div class="row">
+        
+        <div class="col-md-12">
+          <div class="position-relative f_13 w-100 orderTable">
+        <div class="table-responsive">
+          <table class="table border table-responsive table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" class="bg-light">S.No</th>
+                <th scope="col" class="bg-light">Pro Id</th>
+                <th scope="col" class="bg-light">Pro Name</th>
+                <th scope="col" class="bg-light">ctgy.</th>
+                <th scope="col" class="bg-light">Wgt.</th>
+                <th scope="col" class="bg-light">Qty.</th>
+                <th scope="col" class="bg-light">Pay Met.</th>
+                <th scope="col" class="bg-light">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let items of orderDetails[0].orders;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{items.product.pId}}</td>
+                <td routerLink="../../../new-in/single-view/{{items.product._id}}" class="text-primary cp">{{items.product.name}}</td>
+                <td>{{items.product.type}}</td>
+                <td>{{items.product.quantity}}</td>
+                <td>{{items.quantity}}</td>
+                <td>COD</td>
+                <td>{{items.product.price}} &#8377;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="position-absolute top-0 start-0 h-100 w-100 bg-white text-center fs-2 d-flex align-items-center justify-content-center" style="margin-top: 3px;" *ngIf="isLoader">Loading...</div> -->
+
+      </div>
+        </div>
+        <div class="col-md-12">
+          <div>
+            <div class="heading mb-3 fs-5 fw-medium">Billing details</div>
+                <div class="content bg-white border d-flex align-items-start justify-content-start mb-2">
+                  <div class="icon  p-1"><i class="bi bi-person"></i></div>
+                  <div class="content ">
+                    <div class="name  fw-medium text-dark f_14 p-1">Customer</div>
+                    <div class="name  f_13 text-primary p-1">
+                      <a routerLink="../../../manage-users" class="text-decoration-none">{{orderDetails[0].user.name}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content bg-white border  d-flex align-items-start justify-content-start mb-2">
+                  <div class="icon  p-1"><i class="bi bi-envelope"></i></div>
+                  <div class="content ">
+                    <div class="name  fw-medium text-dark f_14 p-1">Email</div>
+                    <div class="name  f_13 text-primary p-1">
+                      <a href="mailto:birender.fea99@gmail.com" class="text-decoration-none">{{orderDetails[0].user.email}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content bg-white border d-flex align-items-start justify-content-start mb-2">
+                  <div class="icon  p-1"><i class="bi bi-telephone"></i></div>
+                  <div class="content ">
+                    <div class="name  fw-medium text-dark f_14 p-1">Phone</div>
+                    <div class="name  f_13 text-primary p-1">
+                      <a href="tel:9560915445" class="text-decoration-none">{{orderDetails[0].billingDetails.phone}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content bg-white border d-flex align-items-start justify-content-start mb-2">
+                  <div class="icon  p-1"><i class="bi bi-house-door"></i></div>
+                  <div class="content ">
+                    <div class="name  fw-medium text-dark f_14 p-1">Address</div>
+                    <div class="name  f_13 p-1">
+                      {{orderDetails[0].billingDetails.address.shippingAddress1}}<br>
+                      {{orderDetails[0].billingDetails.address.shippingAddress2}}, {{orderDetails[0].billingDetails.address.city}}-{{orderDetails[0].billingDetails.address.zip}},{{orderDetails[0].billingDetails.address.state}}<br>
+                      {{orderDetails[0].billingDetails.address.country}}
+                      </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <div>
+        <div class="card">
+          <div class="card-header fs-5 fw-medium">
+            Summary
+          </div>
+          <div class="card-body position-relative">
+            <div class="row">
+              <div class="col-8">
+                <div class="mb-1">Quantity:</div>
+                <div class="mb-1">Shipping Charge:</div>
+                <div class="mb-1">Charges:</div>
+                <div class="fs-6 fw-bold mt-2">Total:</div>
+              </div>
+              <div class="col-4 text-end">
+                <div class="mt-1">{{totalquantityvar}}</div>
+                <div class="mt-1">{{orderDetails[0].orderSummary.shipping}} &#8377;</div>
+                <div class="mt-1">{{orderDetails[0].orderSummary.charge}} &#8377;</div>
+                <div class="fs-6 fw-bold mt-2">{{totalpricevar}} &#8377;</div>
+              </div>
+            </div>
+            <div [ngClass]="!totalquantityvar ? 'd-block' :'d-none'" class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+
+              <div class="mt-1"><img src="../../../assets/loader.gif" alt="" width="100px">
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="col-md-12">
+          <div>
+        <div class="card">
+          <div class="card-header fs-5 fw-medium">
+            Order Status
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-9">
+                <label for="State" class="form-label">Current Status: <span ngClass="{{orderStatusVal2}}" [ngClass]="orderStatusVal2=='out of delivery' ? 'out-of-delivery' : orderStatusVal2">{{orderStatusVal2}}</span></label>
+                <select id="State" (change)="OnOrderStatus($event)" select name="state" required ngModel class="form-select form-select-sm">
+                  <option value="" selected hidden>Select Status</option>
+                  <option value="{{orderStatus.packaging}}">{{orderStatus.packaging}}</option>
+                  <option value="{{orderStatus.out_of_delivered}}">{{orderStatus.out_of_delivered}}</option>
+                  <option value="{{orderStatus.delivered}}">{{orderStatus.delivered}}</option>
+                  <option value="{{orderStatus.pending}}">{{orderStatus.pending}}</option>
+                  <option value="{{orderStatus.cancelled}}">{{orderStatus.cancelled}}</option>
+                </select>
+              </div>
+              <div class="col-3 d-flex align-items-end">
+                <button class="btn btn-success btn-sm" (click)="OnOrderStatusSave(orderDetails[0].orderId.id)">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+ 
+
+  </div>
+
+
+  <div class="successLoader d-flex align-items-end justify-content-center">
+    <div class="position-fixed z-2 bg-warning text-dark border border-dark px-3 p-1" [ngStyle]="ispopupStatus ? {'top':'30px','transition':'1s'} :{'top':'-50px','transition':'2s'}" >
+      {{popupMsg}} 
+    </div>
+  </div>

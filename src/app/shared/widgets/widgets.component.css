@@ -1,0 +1,24 @@
+.batteryInner{
+    height:80px;
+    width: 250px;
+    border:5px solid #000;
+    border-radius: 3px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.battery{display: flex;align-items: center;}
+.battery::after{
+    content:"";
+    height: 25px;
+    width: 15px;
+    background-color: black;
+}
+.cell{
+    height: 80px;
+    width: 40px;
+    background-color: greenyellow;
+    margin:3px;
+    border-radius: 5px;
+}
