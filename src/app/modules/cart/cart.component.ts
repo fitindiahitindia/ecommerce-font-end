@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/data-type';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  constructor(private _product: ProductService) {}
+  constructor(private _product: ProductService,private _router:Router) {}
   cart: any = [];
   cartItems: number = 0;
   productQuantity:number=0;
@@ -64,6 +65,9 @@ export class CartComponent {
     this.singleProductQuan=this._product.getSingleProductQuantity();
   }
   ngOnInit() {
+    if(localStorage.getItem('cartItem')?.length==null){
+      this._router.navigate(['/'])
+    }
     this.getLocalCart();
     this.getCartLength();
     this.getTotalPrice();

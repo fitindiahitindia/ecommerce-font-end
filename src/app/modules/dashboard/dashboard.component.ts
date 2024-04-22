@@ -9,8 +9,21 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class DashboardComponent {
   sideBarOpen:boolean=false;
+  analysisData={
+    totalOrders:0,
+    totalProducts:0,
+    totalUsers:0,
+    totalBlogs:0
+  };
   constructor(private _product:ProductService){}
+
+  getAdminAnalysis(){
+    this._product.getAdminDashAnalsis().subscribe((res:any)=>{
+     this.analysisData = res.data;
+    })
+  }
   ngOnInit(){
+    this.getAdminAnalysis();
     // alert()
     // this._product.reloadUser();
   new Chart("myChart", {
@@ -53,4 +66,5 @@ export class DashboardComponent {
 
 
   }
+  
 }

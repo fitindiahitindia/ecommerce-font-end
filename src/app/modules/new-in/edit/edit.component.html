@@ -75,6 +75,10 @@
                 <option value="raisin" [defaultSelected]="getProductData.type=='raisin'">raisin</option>
                 <option value="pistachio" [defaultSelected]="getProductData.type=='pistachio'">pistachio</option>
               </select>
+              <!-- <select name="" id="" class="form-select form-select-sm form-control-sm text-capitalize" [ngModelOptions]="{standalone: true}" (change)="productType($event)" ngModel="{{getProductData.type}}">
+                <option value="" selected disabled>Select category type</option>
+                <option value="{{cat.categoryName}}" *ngFor="let cat of getProductData;"><span class="text-capitalize">{{cat.categoryName}}</span></option>
+              </select> -->
             </div>
             <div class="col-6">
               <label class="form-label">Image</label>

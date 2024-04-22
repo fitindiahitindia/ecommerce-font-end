@@ -1,0 +1,5 @@
+@media print{
+    th,td,.forPrint{
+        border:2px solid black!important;
+    }
+}

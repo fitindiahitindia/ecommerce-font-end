@@ -66,9 +66,11 @@
                       </mat-card-header>
                   </a>
                     <mat-card-content>
+                      <a routerLink="/product-detail/{{item._id}}" class="text-decoration-none text-dark">
                       <div class="title text-center" style="min-height: 40px;overflow: hidden;">
                         <h3 class="h6  cp">{{item.name}}</h3>
                       </div>
+                    </a>
                       <!-- <div class="quan d-flex justify-content-center my-1 my-sm-3"> 
                         <select name="" id="" (change)="onChangeUnit($event.target)"  class="form-control p-0 p-sm-1 w-50 border border-dark text-center" style="">
                           <option value="{{selectValue}}" *ngFor="let units of item.p_u;let selectValue=index ">{{units.quan}}</option>

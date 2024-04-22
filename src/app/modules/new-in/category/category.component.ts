@@ -26,7 +26,7 @@ export class CategoryComponent {
     // let formParmas = new FormData();
     // formParmas.append('file',this.file);
     // console.log(formParmas)
-    this._product.create_Category(this.file).subscribe((res:any)=>{
+    this._product.create_Category(category).subscribe((res:any)=>{
       this.isSuccess = true;
       this.message = "Category Add Successfully"
       this.getCategory()

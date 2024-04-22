@@ -15,12 +15,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of allProduct;let i=index">
+          <!-- <pre>{{allProduct | json}}</pre> -->
           <th>{{i+1}}</th>
           <td>{{item.orderItems[0].product.pId}}</td>
           <td>{{item._id}}</td>
           <td>{{item.orderItems[0].product.name}}</td>
           <td>{{item.shippingAddress1}},{{item.shippingAddress2}},{{item.city}},{{item.state}}-{{item.zip}},{{item.country}}</td>
-          <td>{{item.orderItems[0].quantity}}</td>
+          <td>
+            <span *ngFor="let orderitem of item.orderItems">{{orderitem.quantity}}</span>
+          </td>
           <td>{{item.status}}</td>
           <td>Rs.{{item.orderItems[0].product.price*item.orderItems[0].quantity}}</td>
           <td colspan="8" *ngIf="isOrder">Order Not Found</td>

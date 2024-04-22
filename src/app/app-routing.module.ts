@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NewInComponent } from './modules/new-in/new-in.component';
@@ -72,7 +72,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'auth',
+    path: 'auth', 
     component: AuthComponent,
     canActivate: [LoginAuthGuardGuard],
     children: [
@@ -111,7 +111,7 @@ const routes: Routes = [
     canActivate: [AdminGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent },
 
       // manage product
       {
@@ -131,10 +131,10 @@ const routes: Routes = [
         component: ManageBlogsComponent,
         children: [
           { path: '', component: ViewBlogsComponent },
-          { path: 'single-view/:id', component: ViewSingleComponent },
           { path: 'add', component: AddBlogsComponent },
-          { path: 'edit/:id', component: EditComponent },
           { path: 'category', component: CategoryBlogsComponent },
+          { path: 'single-view/:id', component: ViewSingleComponent },
+          { path: 'edit/:id', component: EditComponent },
         ],
       },
       //manage orders
@@ -157,13 +157,20 @@ const routes: Routes = [
       },
       //setting
       { path: 'setting', component: AdminSettingComponent },
+
+      //manage-website
+      {path:'manage-website',loadChildren:()=>import('./modules/manage-website/manage-website.module')
+      .then(mod=>mod.ManageWebsiteModule)}
     ],
   },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
+  imports: [RouterModule.forRoot(routes, 
+    { scrollPositionRestoration: 'top' },
+    // {preloadingStrategy:PreloadAllModules}
+    )],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

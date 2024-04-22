@@ -4,11 +4,11 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-add-blogs',
-  templateUrl: './add-blogs.component.html',
-  styleUrls: ['./add-blogs.component.css']
+  selector: 'app-add-blog2',
+  templateUrl: './add-blog2.component.html',
+  styleUrls: ['./add-blog2.component.css']
 })
-export class AddBlogsComponent {
+export class AddBlog2Component {
   constructor(private _product:ProductService){console.log("blog added is loaded")}
   editorConfig: AngularEditorConfig = {
       editable: true,
@@ -75,3 +75,4 @@ createBlog(blog:NgForm){
 }
 res='<h1>Heading</h1>'
 }
+

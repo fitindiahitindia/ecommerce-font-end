@@ -27,9 +27,10 @@ export class ProductService {
   URL = "http://localhost:5000/api/v1";
 
   get_product():Observable<any>{
-    
-   const getProduct= this._http.get<productResponse>(this.URL+"/product");
-    return getProduct
+   const adminlogintoken=this.getAdminLoginToken();
+   const headers = {"Authorization":"Bearer "+adminlogintoken}
+   const getProduct= this._http.get<productResponse>(this.URL+"/product",{headers});
+   return getProduct
   }
   get_SingleProduct(id:any){
     return this._http.get(this.URL+"/product/"+id);
@@ -113,13 +114,17 @@ export class ProductService {
     return this._http.post(this.URL+"/state",countryObj);
   }
   create_Category(categroy:any){
-    return this._http.post(this.URL+"/category",categroy);
+    const adminlogintoken=this.getAdminLoginToken();
+    const headers = {"Authorization":"Bearer "+adminlogintoken}
+    return this._http.post(this.URL+"/category",categroy,{headers});
   }
   upload(file:any){
     return this._http.post(this.URL+"/upload",file)
   }
   get_Categroy(){
-    return this._http.get(this.URL+"/category");
+    const adminlogintoken=this.getAdminLoginToken();
+    const headers = {"Authorization":"Bearer "+adminlogintoken}
+    return this._http.get(this.URL+"/category",{headers});
   }
   remove_Category(id:any){
     return this._http.delete(this.URL+"/category"+"/"+id);
@@ -146,15 +151,29 @@ export class ProductService {
     const headers = {"Authorization":"Bearer "+adminlogintoken}
       return this._http.post(this.URL+"/adminAuth/adminPassword",data,{headers})
   }
+  getAdminDashAnalsis(){
+    const adminlogintoken=this.getAdminLoginToken();
+    const headers = {"Authorization":"Bearer "+adminlogintoken}
+    return this._http.get(this.URL+"/adminDashboardAnalysis",{headers})
+  }
   create_blog(data:any){
     return this._http.post(this.URL+"/blog/create",data)
+  }
+  create_blog_category(categroy:any){
+    const adminlogintoken=this.getAdminLoginToken();
+    const headers = {"Authorization":"Bearer "+adminlogintoken}
+    return this._http.post(this.URL+"/blog/category",categroy,{headers});
+  }
+  get_blog_category(){
+    return this._http.get(this.URL+"/blog/category")
   }
   get_blog(){
     return this._http.get(this.URL+"/blog")
   }
   get_blogById(blogId:any){
-    return this._http.get(this.URL+"/blog/"+blogId)
+    return this._http.get(this.URL+"/blog/byId/"+blogId)
   }
+
   setProductInCheckout(data:any){
     this.productInCheckout=data
   }

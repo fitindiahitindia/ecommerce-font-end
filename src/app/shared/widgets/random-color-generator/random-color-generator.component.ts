@@ -27,7 +27,7 @@ export class RandomColorGeneratorComponent {
    const boxObj = {
      id:Date.now(),
      code:`rgb(${red},${green},${blue})`,
-     red:red,
+     red:red, 
      green:green,
      blue:blue
     }

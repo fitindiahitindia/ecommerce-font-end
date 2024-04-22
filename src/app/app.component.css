@@ -46,4 +46,15 @@
     padding: 20px;
   }
   li{transition: 0.2s;}
-  
+  span{
+    position: relative;
+  }
+  span:hover{
+    position: absolute;
+    height: auto;
+    width: auto;
+    background-color: red;
+    z-index: 99;
+    /* top:10px; */
+    cursor: pointer;
+  }

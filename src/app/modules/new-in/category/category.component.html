@@ -16,11 +16,11 @@
                   <small class="text-danger" *ngIf="!categoryName.valid && categoryName.touched">Please enter category name</small>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Select Category Image</label>
-                  <input (change)="onFilechange($event)" class="form-control"  type="file" name="categoryFile" id="formFile" #categoryFile="ngModel" ngModel required>
+                  <!-- <label class="form-label">Select Category Image</label> -->
+                  <!-- <input (change)="onFilechange($event)" class="form-control"  type="file" name="categoryFile" id="formFile" #categoryFile="ngModel" ngModel required> -->
        <!-- <button (click)="upload()" type="button" class="btn btn-primary mt-3" >Upload</button> -->
                   <!-- <input type="text" class="form-control form-control-sm bg-white" name="categoryName" [(ngModel)]="categoryObj.categoryName" #categoryName="ngModel" ngModel required> -->
-                  <small class="text-danger" *ngIf="!categoryFile.valid && categoryFile.touched">Please select category image</small>
+                  <!-- <small class="text-danger" *ngIf="!categoryFile.valid && categoryFile.touched">Please select category image</small> -->
                 </div>
                 <div style="margin-top: 15px;">
                   <button mat-flat-button color="primary" type="submit" style="margin-right: 5px;" *ngIf="!isUpdate" [disabled]="!category.valid">Save</button>
