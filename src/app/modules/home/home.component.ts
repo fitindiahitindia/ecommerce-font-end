@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { Product} from 'src/app/data-type';
 import { ProductService } from 'src/app/services/product.service';
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private _product:ProductService){}
+  constructor(private _product:ProductService,private router:Router){}
   isProductLoader:boolean=true;
   getAllProduct:Product[]=[];
   category:any[]=[];
@@ -81,5 +82,20 @@ export class HomeComponent implements OnInit {
   
   ngDoCheck(){
     this.selectByCategory(this.isCategory)
+  }
+
+  searchProduct(query:any){
+    // if(query){
+      //   const element = query.target as HTMLInputElement;
+    //   this._product.search_product(element.value).subscribe((res:any)=>{
+    //     res.data.filter((val:any,i:number)=>{
+    //       console.log(val.name.toString())
+    //     })
+    //   })
+    // }  
+    this.router.navigate(
+      ['/all-products'],
+      {queryParams:{search:query}}
+    )  
   }
   }

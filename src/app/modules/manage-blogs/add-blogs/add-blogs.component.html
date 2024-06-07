@@ -11,7 +11,7 @@
                   <div class="col-md-4 col-12">
                     <label class="form-label">Blog Name</label>
                     <input type="text" class="form-control form-control-sm bg-white" name="blogTitle" [(ngModel)]="createBlogObj.title" #blogTitle="ngModel" ngModel required>
-                    <small class="text-danger" *ngIf="!blogTitle.valid && blogTitle.touched">Please enter title</small>
+                    <small class="text-danger" *ngIf="!blogTitle.valid && blogTitle.touched">Please enter blog name</small>
                   </div>
                   <div class="col-md-4 col-12">
                     <label class="form-label">Category Name</label>
@@ -21,7 +21,7 @@
                   <div class="col-md-4 col-12">
                     <label class="form-label">Image URL</label>
                     <input type="text" class="form-control form-control-sm bg-white" name="blogImage" [(ngModel)]="createBlogObj.image" #blogImage="ngModel" ngModel required>
-                    <small class="text-danger" *ngIf="!blogImage.valid && blogImage.touched">Please enter category name</small>
+                    <small class="text-danger" *ngIf="!blogImage.valid && blogImage.touched">Please enter image url</small>
                   </div>
                 
                   <div style="margin-top: 15px;">
@@ -32,7 +32,7 @@
               </form>
           </div>
           <div class="col-md-12 mt-md-0 mt-2">
-          <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="createBlogObj.content" [config]="editorConfig"></angular-editor>
+          <!-- <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="createBlogObj.content" [config]="editorConfig"></angular-editor> -->
             
           </div>
          </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DashboardService } from './services/dashboard.service';
 import { ProductService } from './services/product.service';
 import { Chart } from 'chart.js/auto';
+import { DialogService } from './services/dialog.service';
 declare var window: any
 export interface Tile{
   color:string;
@@ -16,9 +17,9 @@ export interface Tile{
 })
 export class AppComponent {
   title = 'material';
-
+  mydata='<input type="text" />';
   sideBarOpen = true;
-  constructor(private _product:ProductService){}
+  constructor(private _product:ProductService, public _dialog:DialogService){}
   reloadUser(){
     this._product.reloadUser();
   }

@@ -8,13 +8,21 @@
   <div class="slider-2"></div>
 </app-slider> 
 <div class="container mt-md-4 mt-2">
+  <div class="row  mt-3 mb-3">
+    <div class="col-md-12">
+      <div class="headings tc my-4">
+        <h2 class="fw-bold text-uppercase">Shop By Categories</h2>
+      </div>
+
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-2 col-3 mt-1" *ngFor="let cat of itemCategory;">
-      <div class="category">
-        <div class="image border-radius">
-          <img src="../../../../assets/slider2.jpg" width="100%" alt="">
+      <div class="category cp" (click)="searchProduct(cat.categoryName)">
+        <div class="image border-radius text-center">
+          <img src="{{cat.categoryImage}}" width="" alt="{{cat.categoryImage}}">
         </div>
-        <div class="name mt-1">{{cat.categoryName}}</div>
+        <div class="text-center name mt-1">{{cat.categoryName}}</div>
       </div>
     </div>
   </div>
@@ -23,7 +31,7 @@
     <div class="row  mt-3 mb-3">
       <div class="col-md-12">
         <div class="headings tc my-4">
-          <h2 class="fw-bold text-uppercase">Shop By Categories</h2>
+          <h2 class="fw-bold text-uppercase">Top Categories</h2>
         </div>
   
       </div>

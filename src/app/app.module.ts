@@ -80,6 +80,7 @@ import { CategoryBlogsComponent } from './modules/manage-blogs/category-blogs/ca
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { BlogDetailComponent } from './modules/blog-detail/blog-detail.component';
 import { AddBlog2Component } from './modules/manage-website/add-blog2/add-blog2.component';
+import { DialogComponent } from './shared/widgets/dialog/dialog.component';
 
 const firebaseConfig = {
 
@@ -152,7 +153,8 @@ const firebaseConfig = {
     AddBlogsComponent,
     CategoryBlogsComponent,
     BlogDetailComponent,
-    AddBlog2Component
+    AddBlog2Component,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

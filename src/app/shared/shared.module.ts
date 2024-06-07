@@ -17,6 +17,7 @@ import { UsersidebarComponent } from './components/usersidebar/usersidebar.compo
 import { UsersettingComponent } from './components/usersetting/usersetting.component';
 import { RandomColorGeneratorComponent } from './widgets/random-color-generator/random-color-generator.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { DialogComponent } from './widgets/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TodoComponent } from './components/todo/todo.component';
     UsersidebarComponent,
     UsersettingComponent,
     RandomColorGeneratorComponent,
-    TodoComponent
+    TodoComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

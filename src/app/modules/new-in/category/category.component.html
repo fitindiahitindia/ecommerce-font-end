@@ -38,6 +38,7 @@
                   <tr>
                     <th scope="col" class="bg-light">S.No</th>
                     <th scope="col" class="bg-light">Categroy Name</th>
+                    <th scope="col" class="bg-light">Categroy Image</th>
                     <th scope="col" class="bg-light">Action</th>
                   </tr>
                 </thead>
@@ -45,6 +46,9 @@
                   <tr *ngFor="let items of productCategory;let i = index">
                     <th>{{i+1}}</th>
                     <td>{{items.categoryName}}</td>
+                    <td class="text-center">
+                      <img src="{{items.categoryImage}}" alt="{{items.categoryImage}}" width="50px">
+                    </td>
                     <td>
                       <span class="cp m-1 bg-success p-1 text-white f_14" (click)="edit(items)">Edit</span>
                       <span class="cp m-1 bg-danger text-white p-1 f_14" (click)="remove(items._id)">Remove</span>

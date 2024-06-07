@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent {
+  category:any[] = [];
   getProductData:any=[]; 
   selectedValue:any;
   productIdParms:any;
@@ -21,14 +22,17 @@ export class EditComponent {
       this.selectedValue = res.data.type;
     })
   }
+  getCategroy(){
+    this._product.get_Categroy().subscribe((res:any)=>{
+      this.category = res.data
+    })
+  }
   editProduct(data:any){
     const abc={
       ...data,
       type:this.selectedValue
     }
     this._product.update_SingleProduct(this.productIdParms,abc).subscribe((res:any)=>{
-      console.log("success update")
-      console.log(abc)
       this.isSuccess=true;
     setTimeout(() => {
       this.isSuccess = false;
@@ -39,9 +43,10 @@ export class EditComponent {
 
   }
   productType(event:any){
-    this.selectedValue=event.target.value
+    this.selectedValue=event.value
   }
   ngOnInit(){
     this.getProduct();
+    this.getCategroy()
   }
 }

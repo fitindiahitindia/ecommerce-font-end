@@ -19,6 +19,7 @@ export class LoginComponent{
   userLogin(loginForm:any) {
     this.loginObj.email = loginForm.email;
     this.loginObj.password = btoa(loginForm.password+`_${Date.now()}`);
+    // this.loginObj.password = loginForm.password;
     this._product.login_user(this.loginObj).subscribe(
       (res: any) => {
         if (res.status == 'success') {
