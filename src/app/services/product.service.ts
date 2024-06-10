@@ -166,7 +166,7 @@ export class ProductService {
     return this._http.post(this.URL+"/blog/category",categroy,{headers});
   }
   get_blog_category(){
-    return this._http.get(this.URL+"/blog/category")
+      return this._http.get(this.URL+"/blog/category")
   }
   get_blog(){
     return this._http.get(this.URL+"/blog")
