@@ -53,14 +53,14 @@
       <div class="row mt-5 gx-2" *ngSwitchCase="'almond'">
         <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-2" *ngFor="let item of productById;let i=index;">         
           <mat-card class="pro-card animate__animated animate__fadeIn" *ngIf="i<4">
-            <a routerLink="/product-detail/{{item._id}}">
+            <span routerLink="/product-detail/{{item._id}}">
             <mat-card-header>
               <div class="position-relative">
                 <span class="bg-danger w-0 text-white p-1 d-inline text-decoration-none justify-content-end align-items-center position-absolute z-3 f_14" style="top:-15px;right:-15px">{{math.trunc(discount[i])}}% Off</span>
                 <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class=" cp img-fluid text-center" routerLink="/product-detail/{{item._id}}">
               </div>
             </mat-card-header>
-          </a>
+          </span>
             <mat-card-content>
               <div class="title text-center">
                 <h3 class="h6  cp">{{item.name}}</h3>
