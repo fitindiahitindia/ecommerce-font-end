@@ -132,7 +132,7 @@
             <a mat-button class="menu-item" routerLinkActive="active" routerLink="/all-products">Dry Fruits</a>
             <a mat-button class="menu-item" routerLinkActive="active" routerLink="/contact">Contact Us</a>
             <a mat-button class="menu-item" routerLinkActive="active" routerLink="/about">About Us</a>
-            <a mat-button class="menu-item" target="_blank" [routerLink]="isAdminLogin ? '/admin-dashboard' : '/admin'" >Admin</a>
+            <a mat-button class="menu-item" [routerLink]="isAdminLogin ? '/admin-dashboard' : '/admin'" >Admin</a>
           </div>
         </div>
         <div class="col-xl-1 col-lg-2 col-md-2 col-sm-2 col-5 d-flex align-items-center justify-content-end">
