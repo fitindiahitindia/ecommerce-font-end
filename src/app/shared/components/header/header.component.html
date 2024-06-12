@@ -89,6 +89,10 @@
                   <li class="mb-2 border-bottom">
                     <a mat-button class="menu-item" (click)="onSidebar()" routerLink="/about">About Us</a>
                   </li>
+                  <li class="mb-2 border-bottom">
+                  <a mat-button class="menu-item" [routerLink]="isAdminLogin ? '/admin-dashboard' : '/admin'" >Admin</a>
+                    </li>
+
                 </ul>
               </div>
             </div>
