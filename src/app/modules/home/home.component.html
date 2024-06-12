@@ -2,8 +2,8 @@
 
 <app-slider>
   <div class="slider-1">
-    <img src="../../../../assets/slider2.jpg" class="d-block d-md-none" style="width:100% ;" alt="">
-    <img src="../../../../assets/slider1.jpg" class="d-md-block d-none" style="width:100% ;" alt="">
+    <img src="https://ecommerce-api-weld.vercel.app/assets/slider2.jpg" class="d-block d-md-none" style="width:100% ;" alt="">
+    <img src="https://ecommerce-api-weld.vercel.app/assets/slider1.jpg" class="d-md-block d-none" style="width:100% ;" alt="">
   </div>
   <div class="slider-2"></div>
 </app-slider> 
@@ -78,11 +78,11 @@
     
               <div class="action mt-3 d-sm-flex align-items-center justify-content-around">
                 <div class="wishlistBtn">
-                  <a routerLink="/product-detail/{{item._id}}">
+                  <span routerLink="/product-detail/{{item._id}}">
                   <button mat-flat-button class="w100_575" color="primary">
                     <span class="fw-bold">BUY NOW</span>
                   </button>
-                </a>
+                </span>
                 </div>
                 <!-- <div class="cartBtn my-1">
                   <button mat-stroked-button class="ms-1 border border-dark w100_575" color="primary">
@@ -168,25 +168,25 @@
           </div>
         </div>
         <div class="col-md-12 my-sm-5 my-3 text-center">
-          <a routerLink="/all-products">
+          <span routerLink="/all-products">
           <button mat-stroked-button class="p-sm-4 p-3 border border-dark" color="primary">
     
             <span class="fw-bold">View All</span>
           </button>
-          </a>
+          </span>
         </div>
       </div>
       <div class="row mt-5 gx-2" *ngSwitchCase="'raisin'">
         <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-2" *ngFor="let item of productById;let i=index;"> 
           <mat-card class="pro-card animate__animated animate__fadeIn">
-            <a routerLink="/product-detail/{{item._id}}">
+            <span routerLink="/product-detail/{{item._id}}">
             <mat-card-header>
               <div class="position-relative">
                 <span class="bg-danger w-0 text-white p-1 d-inline text-decoration-none justify-content-end align-items-center position-absolute z-3 f_14" style="top:-15px;right:-15px">{{math.trunc(discount[i])}}% Off</span>
                 <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class=" cp img-fluid text-center" routerLink="/product-detail">
               </div>
             </mat-card-header>
-          </a>
+          </span>
             <mat-card-content>
               <div class="title text-center">
                 <h3 class="h6  cp">{{item.name}}</h3>
@@ -305,14 +305,14 @@
       <div class="row mt-5 gx-2" *ngSwitchCase="'cashew'">
         <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-2" *ngFor="let item of productById;let i=index;">
           <mat-card class="pro-card animate__animated animate__fadeIn">
-            <a routerLink="/product-detail/{{item._id}}">
+            <span routerLink="/product-detail/{{item._id}}">
             <mat-card-header>
               <div class="position-relative">
                 <span class="bg-danger w-0 text-white p-1 d-inline text-decoration-none justify-content-end align-items-center position-absolute z-3 f_14" style="top:-15px;right:-15px">{{math.trunc(discount[i])}}% Off</span>
                 <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class=" cp img-fluid text-center" routerLink="/product-detail">
               </div>
             </mat-card-header>
-          </a>
+          </span>
             <mat-card-content>
               <div class="title text-center">
                 <h3 class="h6  cp">{{item.name}}</h3>
@@ -431,14 +431,14 @@
       <div class="row mt-5 gx-2" *ngSwitchCase="'pistachio'">
         <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-2" *ngFor="let item of productById;let i=index;">
           <mat-card class="pro-card animate__animated animate__fadeIn">
-            <a routerLink="/product-detail/{{item._id}}">
+            <span routerLink="/product-detail/{{item._id}}">
             <mat-card-header>
               <div class="position-relative">
                 <span class="bg-danger w-0 text-white p-1 d-inline text-decoration-none justify-content-end align-items-center position-absolute z-3 f_14" style="top:-15px;right:-15px">{{math.trunc(discount[i])}}% Off</span>
                 <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class=" cp img-fluid text-center" routerLink="/product-detail">
               </div>
             </mat-card-header>
-          </a>
+          </span>
             <mat-card-content>
               <div class="title text-center">
                 <h3 class="h6  cp">{{item.name}}</h3>
@@ -567,25 +567,25 @@
       <div class="row">
         <div class="col-md-3 col-6 mb-2">
           <div class="iconWithContent text-white text-center">
-            <div><img src="../../../assets/wide-products-range.svg" alt=""></div>
+            <div><img src="https://ecommerce-api-weld.vercel.app/assets/wide-products-range.svg" alt=""></div>
             <div class="h6 mt-2">Wide Product Range</div>
           </div>
         </div>
         <div class="col-md-3 col-6 mb-2">
           <div class="iconWithContent text-white text-center">
-            <div><img src="../../../assets/quality-products.svg" alt=""></div>
+            <div><img src="https://ecommerce-api-weld.vercel.app/assets/quality-products.svg" alt=""></div>
             <div class="h6 mt-2">Highest Quality Products</div>
           </div>
         </div>
         <div class="col-md-3 col-6 mb-2">
           <div class="iconWithContent text-white text-center">
-            <div><img src="../../../assets/natural-organic.svg" alt=""></div>
+            <div><img src="https://ecommerce-api-weld.vercel.app/assets/natural-organic.svg" alt=""></div>
             <div class="h6 mt-2">100% Natural & Organic</div>
           </div>
         </div>
         <div class="col-md-3 col-6 mb-2">
           <div class="iconWithContent text-white text-center">
-            <div><img src="../../../assets/on-time-delivery.svg" alt=""></div>
+            <div><img src="https://ecommerce-api-weld.vercel.app/assets/on-time-delivery.svg" alt=""></div>
             <div class="h6 mt-2">On-Time Delivery</div>
           </div>
         </div>
@@ -595,7 +595,7 @@
   
   <!--  -->
   
-  <div class="bestseller py-sm-5 py-4" style="background-image: url(../../../assets/pngwing.com2.png);background-size: 300px;"> 
+  <div class="bestseller py-sm-5 py-4" style="background-image: url(https://ecommerce-api-weld.vercel.app/assets/back.png);background-size: 300px;"> 
     <div class="container">
   
       <div class="row">
@@ -800,7 +800,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img">
-            <img src="../../../assets/about-us.png" class="img-fluid" alt="">
+            <img src="https://ecommerce-api-weld.vercel.app/assets/about-us.png" class="img-fluid" alt="">
           </div>
         </div>
         <div class="col-md-6 darkgreen">
@@ -888,7 +888,7 @@
         <div class="col-md-4 mb-2">
           <mat-card class="pro-card animate__animated animate__fadeIn lightgreen rounded-0">
             <div class="text-center">
-              <img mat-card-image src="../../../assets/202211111954_client_8.jpg" alt="Photo of a Shiba Inu"
+              <img mat-card-image src="https://ecommerce-api-weld.vercel.app/assets/client-1.jpg" alt="Photo of a Shiba Inu"
                 class="rounded-circle cp img-fluid text-center">
             </div>
             <mat-card-content>
@@ -909,7 +909,7 @@
         <div class="col-md-4 mb-2">
           <mat-card class="pro-card animate__animated animate__fadeIn lightgreen rounded-0">
             <div class="text-center">
-              <img mat-card-image src="../../../assets/202211111953_client_11.png" alt="Photo of a Shiba Inu"
+              <img mat-card-image src="https://ecommerce-api-weld.vercel.app/assets/client-2.png" alt="Photo of a Shiba Inu"
                 class="rounded-circle cp img-fluid text-center">
             </div>
             <mat-card-content>
@@ -930,7 +930,7 @@
         <div class="col-md-4 mb-2 ">
           <mat-card class="pro-card animate__animated animate__fadeIn lightgreen rounded-0">
             <div class="text-center">
-              <img mat-card-image src="../../../assets/202211111952_client_9.jpg" alt="Photo of a Shiba Inu"
+              <img mat-card-image src="https://ecommerce-api-weld.vercel.app/assets/client-3.jpg" alt="Photo of a Shiba Inu"
                 class="rounded-circle cp img-fluid text-center">
             </div>
             <mat-card-content>

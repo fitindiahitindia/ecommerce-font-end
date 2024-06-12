@@ -27,7 +27,7 @@ export class ProductService {
   // URL = "http://localhost:5000/api/v1";
   // URL="https://ecommerce-api-topaz.vercel.app/api/v1"
      URL="https://ecommerce-api-weld.vercel.app/api/v1"
-
+  
   get_product():Observable<any>{
    const adminlogintoken=this.getAdminLoginToken();
    const headers = {"Authorization":"Bearer "+adminlogintoken}
